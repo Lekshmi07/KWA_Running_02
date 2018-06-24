@@ -24,7 +24,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatePicker pickerDate;
+    //DatePicker pickerDate;
     TimePicker pickerTime;
     Button buttonSetAlarm,cancel;
     TextView tv;
@@ -44,14 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         Calendar now = Calendar.getInstance();
         now.add(Calendar.MINUTE, 1);
-        pickerDate = findViewById(R.id.pickerdate);
+        //pickerDate = findViewById(R.id.pickerdate);
         pickerTime = findViewById(R.id.pickertime);
 
-        pickerDate.init(
-                now.get(Calendar.YEAR),
-                now.get(Calendar.MONTH),
-                now.get(Calendar.DAY_OF_MONTH),
-                null);
+
 
         pickerTime.setCurrentHour(now.get(Calendar.HOUR_OF_DAY));
         pickerTime.setCurrentMinute(now.get(Calendar.MINUTE));
@@ -63,9 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 Calendar cal = Calendar.getInstance();
-                cal.set(pickerDate.getYear(),
-                        pickerDate.getMonth(),
-                        pickerDate.getDayOfMonth(),
+                cal.set(
                         pickerTime.getCurrentHour(),
                         pickerTime.getCurrentMinute(),
                         0);
